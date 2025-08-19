@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-  "dev": "PORT=$(cat .env.local | grep PORT | cut -d '=' -f2) next dev --turbopack",
-  "start": "PORT=$(cat .env.local | grep PORT | cut -d '=' -f2) next start",
-  "build": "next build",
-  "lint": "next lint"
+  "dev": "next dev",
+  "build": "next build && next export",
+  "deploy": "npm run build && gh-pages -d out"
 },
   "dependencies": {
     "react": "19.1.0",
