@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
+  "dev": "PORT=$(cat .env.local | grep PORT | cut -d '=' -f2) next dev --turbopack",
+  "start": "PORT=$(cat .env.local | grep PORT | cut -d '=' -f2) next start",
+  "build": "next build",
+  "lint": "next lint"
+},
   "dependencies": {
     "react": "19.1.0",
     "react-dom": "19.1.0",
